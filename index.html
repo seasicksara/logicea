@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" /> 
+
+    <title>Logicea Jokes</title>
+</head>
+<body>
+    <div class="lightboxContainer" id="signIn">
+        <div class="lightboxContent">
+            <p>Knock knock! Want to hear some jokes?</p>
+            <button class="button">Sign in</button>
+        </div>
+    </div>
+    <div class="main blurred">
+        <h1>Jokes</h1>
+        <div class="filters">
+            <div class="topBtns">
+                <button class="button" id="modeToggle">Switch to dark mode</button>
+                <button class="button" id="signOut">Sign Out</button>
+            </div>
+            <form>
+                Show:
+                <select id="filterBy" onchange="setSelection(this)">
+                    <option value="5" data-id="select-5">5 jokes</option>
+                    <option value="10" data-id="select-10">10 jokes</option>
+                </select>
+            </form>
+        </div>
+            <div class="info">
+                <table class="jokesTable">
+                    <caption>Best jokes in the world</caption>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Created Date</th>
+                    <th>Views</th>
+                    <tr>
+                        <td class="title"></td>
+                        <td class="author"></td>
+                        <td class="createdAt"></td>
+                        <td class="views"></td>
+                    </tr>
+                    <tr>
+                        <td class="title"></td>
+                        <td class="author"></td>
+                        <td class="createdAt"></td>
+                        <td class="views"></td>
+                    </tr>
+                </table>
+            </div>
+            <button  id="addNewJoke"  class="button" type="button" name="button">Add a joke</button>
+        <div class="pagination">
+        <span class="arrow prev" data-id="prev"></span>
+        <span class="arrow next" data-id="next"></span>
+        </div>
+    </div>
+    <div class="lightboxContainer jokeForm hidden">
+        <div class="lightboxContent">
+            <div id="closeIcon"></div>
+            <form id="jokeForm">
+                <label for="jtitle">Title:</label>
+                <input type="text" id="jtitle" name="jtitle" value="Joke title">
+                <label for="jname">Author:</label>
+                <input type="text" id="jname" name="jname" value="John Doe">
+                <label for="jdate">Created Date:</label>
+                <input type="text" id="jdate" name="jdate" value="27 Apr 2023" disabled>
+                <label for="jviews">Views:</label>
+                <input type="text" id="jviews" name="jviews" value="84" disabled>
+                <label for="joke">Joke:</label>
+                <textarea placeholder="Knock knock, who's there?" maxlength='1000' minlength='100'></textarea>
+                <!-- <input type="submit" value="Submit"> -->
+            </form> 
+            <button class="button" id="editJoke">Edit joke</button>
+            <button class="button" id="deleteJoke">Delete joke</button>
+        </div>
+    </div>
+    <div class="lightboxContainer addJoke hidden">
+        <div class="lightboxContent">
+            <div id="closeIconNewJoke"></div>
+            <form id="jokeForm__add">
+                <label for="jtitle">Title:</label>
+                <input type="text" id="jtitle" name="jtitle" value="">
+                <label for="jname">Author:</label>
+                <input type="text" id="jname" name="jname" value="">
+                <!-- <label for="jviews">Views:</label>
+                <input type="text" id="jviews" name="jviews" value=""> -->
+                <label for="joke">Joke:</label>
+                <textarea placeholder="Knock knock, who's there?" maxlength='1000' minlength='100'></textarea>
+                <!-- <input type="submit" value="Submit"> -->
+            </form> 
+            <button class="button" id="submitJoke">Submit joke</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="jokes.js"></script>
+</body>
+<!--<script src="capitals.js" charset="utf-8"></script>-->

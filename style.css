@@ -1,0 +1,240 @@
+body {
+text-align: center;
+font-family: Arial;
+
+position: relative;
+margin: 0;
+padding: 0;
+}
+body.dark-mode {
+background-color: black;
+color: white;
+}
+body.dark-mode th, body.dark-mode td, body.dark-mode tr  {
+border-color: #FFF;
+}
+body.dark-mode .lightboxContainer .lightboxContent {
+    /* background-color: #000 !important; */
+    color: #000 !important;
+}
+
+.main {
+    padding: 24px;
+    position: relative;
+}
+
+.main.blurred {
+    filter: blur(4px);
+}
+
+h1 {
+color: #008CBA;
+}
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.topBtns {
+    display: flex;
+}
+.topBtns .button {
+    margin-right: 4px;
+}
+select#filterBy {
+    padding: 4px;
+    margin-left: 8px;
+}
+button#modeToggle {
+/*   position: absolute;
+top: 10px;
+right: 0; */
+}
+
+.button {
+padding: 10px;
+border: 1px solid transparent;
+border-radius: 4px;
+background-color: #008CBA;
+color: #FFF;
+font-size: .85rem;
+}
+.button:hover {
+cursor: pointer;
+}
+
+
+
+caption {
+margin: 10px 0;
+}
+
+tr {
+height: 30px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: auto;
+    padding: 24px 0;
+}
+
+/** Table Styling **/
+table {
+    border:none;
+    border-collapse: collapse;
+}
+
+table td, table th {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+table td:first-child, table th:first-child {
+    border-left: none;
+}
+
+
+table td:last-child, table th:last-child {
+    border-right: none;
+}
+
+table a {
+text-decoration: none;
+color: inherit;
+}
+table a:hover {
+filter: invert(1);
+}
+
+table td.title:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+/*** End of Table Style ***/
+
+button {
+margin: 20px 0;
+height: 40px;
+/*   width: 100px; */
+cursor: pointer;
+}
+
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0 60px 0;  
+    justify-content: space-evenly;
+}
+
+span.arrow {
+    width: 36px;
+    height: 36px;
+    background-image: url('next.png');
+    background-size: cover;
+    filter: invert(68%) sepia(63%) saturate(6752%) hue-rotate(163deg) brightness(98%) contrast(101%);
+}
+span.arrow.prev {
+    transform: rotate(180deg);
+}
+span.arrow.prev.inactive, span.arrow.next.inactive {
+    visibility: hidden;
+}
+span.arrow:hover {
+    cursor: pointer;
+    /* filter: invert(1); */
+}
+body.dark-mode span.arrow {
+    filter: invert(1);
+}
+
+
+
+.pagination span {
+margin: 0 10px;
+cursor: pointer;
+}
+
+.pagination span.active {
+font-weight: 800;
+}
+
+/*** Joke Form - Lightbox ***/
+.lightboxContainer {
+    position: fixed;
+    top: 0;
+    /* background-color: lightseagreen; */
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.lightboxContainer.hidden {
+    display: none;
+}
+
+.lightboxContainer:before {
+    display: block;
+    content: '';
+    background-color: #404040;
+    width: 100vw;
+    height: 100vh;
+    opacity: .4;
+    position: fixed;
+    z-index: -1;
+}
+.lightboxContainer .lightboxContent {
+    background-color: #d2ebf3;
+    max-width: 800px;
+    width: 50vw;
+    padding: 24px 20px;
+
+    box-shadow: 10px 11px 14px -8px rgba(0,0,0,0.75);
+}
+.lightboxContainer .lightboxContent form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.lightboxContainer .lightboxContent form label {
+    padding: 24px 0 12px 0;
+}
+.lightboxContainer .lightboxContent form input {
+    padding: 8px 16px;
+}
+.lightboxContainer .lightboxContent form textarea {
+    padding: 16px;
+}
+
+.lightboxContainer #closeIcon, #closeIconNewJoke {
+    width: 16px;
+    height: 16px;
+    background-image: url("close.png");
+    background-size: cover;
+    position: absolute;
+
+    cursor: pointer;
+}
+
+/*** Sign In ***/
+.lightboxContainer#signIn {
+    z-index: 999;
+}
+.lightboxContainer#signIn.hidden {
+    display: none;
+}
+.lightboxContainer#signIn p {
+    font-weight: 700;
+}
+
+
